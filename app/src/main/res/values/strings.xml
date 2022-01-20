@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Crows</string>
+    <string name="message">"Crows counted: "</string>
+    <string name="button_text">Count crows</string>
+    <string name="CheckBox_Red">Red colour</string>
+    <string name="CheckBox_Bold">Bold text</string>
+    <string name="CheckBox_Italic">Italic text</string>
+</resources>
