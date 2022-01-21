@@ -4,6 +4,7 @@ import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -17,18 +18,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        CheckBox bold = findViewById(R.id.checkBoxBold);
         CheckBox red = findViewById(R.id.checkBoxRed);
+        CheckBox italic = findViewById(R.id.checkBoxItalic);
+
         red.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 TextView tw = findViewById(R.id.textView);
 
-                if(isChecked)
-                {
+                if (italic.isChecked())
+                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+                else
+                    tw.setTypeface(Typeface.DEFAULT);
+
+                if (bold.isChecked())
+                       tw.setTypeface(Typeface.DEFAULT_BOLD);
+                else
+                   tw.setTypeface(Typeface.DEFAULT);
+                if (red.isChecked())
                     tw.setTextColor(Color.RED);
-                }
-                tw.setTextColor(Color.BLACK);
+                else
+                    tw.setTextColor(Color.BLACK);
             }
         });
     }
@@ -38,15 +49,12 @@ public class MainActivity extends AppCompatActivity {
         TextView tw = findViewById(R.id.textView);
 
         Random rand = new Random();
-        CheckBox bold = findViewById(R.id.checkBoxBold);
-        CheckBox italic = findViewById(R.id.checkBoxItalic);
+
 
 
 
         tw.setText(getString(R.string.message)+ rand.nextInt(30000));
 
     }
-    public void cbRed(View view)
-    {
-    }
+
 }

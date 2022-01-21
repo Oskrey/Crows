@@ -14,6 +14,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp"
+        android:typeface="monospace"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -26,29 +27,33 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layout_editor_absoluteX="247dp" />
 
-    <CheckBox
-        android:id="@+id/checkBoxRed"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="cbRed"
-        android:text="@string/CheckBox_Red"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:layout_editor_absoluteX="72dp" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <CheckBox
-        android:id="@+id/checkBoxBold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/CheckBox_Bold"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxRed"
-        tools:layout_editor_absoluteX="72dp" />
+        <CheckBox
+            android:id="@+id/checkBoxRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CheckBox_Red" />
 
-    <CheckBox
-        android:id="@+id/checkBoxItalic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/CheckBox_Italic"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxBold"
-        tools:layout_editor_absoluteX="0dp" />
+        <CheckBox
+            android:id="@+id/checkBoxItalic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CheckBox_Italic" />
+
+        <CheckBox
+            android:id="@+id/checkBoxBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CheckBox_Bold" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
