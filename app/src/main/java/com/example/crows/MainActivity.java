@@ -21,26 +21,41 @@ public class MainActivity extends AppCompatActivity {
         CheckBox bold = findViewById(R.id.checkBoxBold);
         CheckBox red = findViewById(R.id.checkBoxRed);
         CheckBox italic = findViewById(R.id.checkBoxItalic);
-
-        red.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        italic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 TextView tw = findViewById(R.id.textView);
 
                 if (italic.isChecked())
-                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
                 else
-                    tw.setTypeface(Typeface.DEFAULT);
+                    if(bold.isChecked()) {
+                        tw.setTypeface(Typeface.DEFAULT);
+                    }
+            }
+        });
+        red.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                TextView tw = findViewById(R.id.textView);
 
-                if (bold.isChecked())
-                       tw.setTypeface(Typeface.DEFAULT_BOLD);
-                else
-                   tw.setTypeface(Typeface.DEFAULT);
                 if (red.isChecked())
                     tw.setTextColor(Color.RED);
                 else
                     tw.setTextColor(Color.BLACK);
             }
+        });
+        bold.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                TextView tw = findViewById(R.id.textView);
+
+
+                if (bold.isChecked())
+                    tw.setTypeface(Typeface.DEFAULT_BOLD);
+                else
+                    tw.setTypeface(Typeface.DEFAULT);
+               }
         });
     }
 
