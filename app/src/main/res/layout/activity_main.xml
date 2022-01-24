@@ -10,11 +10,10 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="rtg"
+        android:text="↓"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp"
-        android:typeface="monospace"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 

@@ -26,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 TextView tw = findViewById(R.id.textView);
 
-                if (italic.isChecked())
+                if (italic.isChecked() && !(bold.isChecked()))
                     tw.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
+                else if (!(italic.isChecked()) && bold.isChecked())
+                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+                else if (italic.isChecked() && bold.isChecked())
+                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
                 else
-                    if(bold.isChecked()) {
-                        tw.setTypeface(Typeface.DEFAULT);
-                    }
+                    tw.setTypeface(Typeface.DEFAULT);
             }
         });
         red.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -49,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 TextView tw = findViewById(R.id.textView);
-
-
-                if (bold.isChecked())
-                    tw.setTypeface(Typeface.DEFAULT_BOLD);
+                if (italic.isChecked() && !(bold.isChecked()))
+                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
+                else if (!(italic.isChecked()) && bold.isChecked())
+                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+                else if (italic.isChecked() && bold.isChecked())
+                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
                 else
                     tw.setTypeface(Typeface.DEFAULT);
                }

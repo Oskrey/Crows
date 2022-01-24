@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Crows</string>
+    <string name="message">Ворон насчитано:</string>
+    <string name="button_text">Посчитать ворон</string>
+    <string name="CheckBox_Red">Красный цвет</string>
+    <string name="CheckBox_Bold">Жирный шрифт</string>
+    <string name="CheckBox_Italic">Курсив</string>
+</resources>
