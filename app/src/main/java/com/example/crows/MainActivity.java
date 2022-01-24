@@ -18,62 +18,55 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         CheckBox bold = findViewById(R.id.checkBoxBold);
         CheckBox red = findViewById(R.id.checkBoxRed);
         CheckBox italic = findViewById(R.id.checkBoxItalic);
         italic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                TextView tw = findViewById(R.id.textView);
-
-                if (italic.isChecked() && !(bold.isChecked()))
-                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
-                else if (!(italic.isChecked()) && bold.isChecked())
-                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-                else if (italic.isChecked() && bold.isChecked())
-                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
-                else
-                    tw.setTypeface(Typeface.DEFAULT);
+                AAA();
             }
         });
         red.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                TextView tw = findViewById(R.id.textView);
-
-                if (red.isChecked())
-                    tw.setTextColor(Color.RED);
-                else
-                    tw.setTextColor(Color.BLACK);
+                AAA();
             }
         });
         bold.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                TextView tw = findViewById(R.id.textView);
-                if (italic.isChecked() && !(bold.isChecked()))
-                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
-                else if (!(italic.isChecked()) && bold.isChecked())
-                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-                else if (italic.isChecked() && bold.isChecked())
-                    tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
-                else
-                    tw.setTypeface(Typeface.DEFAULT);
+                AAA();
                }
         });
     }
 
+    public void AAA()
+    {
+        CheckBox bold = findViewById(R.id.checkBoxBold);
+        CheckBox red = findViewById(R.id.checkBoxRed);
+        CheckBox italic = findViewById(R.id.checkBoxItalic);
+        TextView tw = findViewById(R.id.textView);
+        if (italic.isChecked() && !bold.isChecked())
+            tw.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
+        else if (!italic.isChecked() && bold.isChecked())
+            tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        else if (italic.isChecked() && bold.isChecked())
+            tw.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+        else
+            tw.setTypeface(Typeface.DEFAULT);
+
+        if (red.isChecked())
+            tw.setTextColor(Color.RED);
+        else
+            tw.setTextColor(Color.BLACK);
+    }
     public void countCrows(View view)
     {
         TextView tw = findViewById(R.id.textView);
-
         Random rand = new Random();
-
-
-
-
         tw.setText(getString(R.string.message)+ rand.nextInt(30000));
-
     }
 
 }
